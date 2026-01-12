@@ -18,11 +18,11 @@ Currently focused on local development (Windows/macOS, Python 3.12). GPU acceler
 - No cloud dependency for core processing
 - Speaker-aware turns with timestamps
 - Readable .txt transcript output
-- reliquery artifact storage (local + optional Google Drive)
+- reliquery artifact storage (local + optional Google Drive/S3/Dropbox)
 
 ## Requirements
 
-- Python 3.12 (conda recommended)
+- Python 3.12 (mamba recommended)
 - FFmpeg (for audio conversion) — installed via conda
 - NVIDIA GPU (optional, for future WhisperX)
 - Hugging Face account (free token for pyannote)
@@ -30,14 +30,14 @@ Currently focused on local development (Windows/macOS, Python 3.12). GPU acceler
 ## Installation & Dev Setup
 
 ### 1. Create conda environment (recommended)
+Using `mamba` for `conda` related installs is recommendeded. Same goes for `uv` realeted to `pip`.
 
 ```bash
-conda create -n deepen python=3.12 -y
-conda activate deepen
+mamba env create -f environment.yml
 
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
-
+After the environement is setup it's time to download vosk models.
 
 ### 3. Model Setup (One-time Downloads)
 

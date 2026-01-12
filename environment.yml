@@ -1,0 +1,35 @@
+name: test-deepen
+
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+  - pytorch
+  - torchaudio
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - sympy
+  - pillow
+  # - soundfile
+  - librosa  
+  # - speechbrain  # conda-forge has it in recent versions
+  # - pyannote-audio  # try conda-forge; if not available → falls to pip below
+  - tqdm
+  - requests
+  - pyyaml
+  - jinja2
+  - sqlalchemy
+  - boto3
+  - dropbox
+  - s3transfer
+  - botocore
+
+  - pip:
+      - uv
