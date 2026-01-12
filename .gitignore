@@ -1,0 +1,16 @@
+vosk_models
+config.json
+
+# Python bytecode & cache
+__pycache__
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.py[cod]
+*$py.class
+
+*.env
+.env*
+secrets.*

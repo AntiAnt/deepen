@@ -1,0 +1,159 @@
+aiohappyeyeballs==2.6.1
+aiohttp==3.13.2
+aiosignal==1.4.0
+alabaster==1.0.0
+alembic==1.17.2
+antlr4-python3-runtime==4.9.3
+anyio==4.11.0
+asteroid-filterbanks==0.4.0
+attrs==25.4.0
+babel==2.17.0
+beautifulsoup4==4.14.2
+black==25.11.0
+bleach==6.3.0
+boto3==1.40.73
+botocore==1.40.73
+certifi==2025.11.12
+cffi==2.0.0
+charset-normalizer==3.4.4
+click==8.3.0
+colorlog==6.10.1
+contourpy==1.3.3
+cycler==0.12.1
+defusedxml==0.7.1
+docopt==0.6.2
+docutils==0.21.2
+dropbox==12.0.2
+einops==0.8.1
+fastjsonschema==2.21.2
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1759948064277/work
+flake8==7.3.0
+fonttools==4.60.1
+frozenlist==1.8.0
+fsspec @ file:///home/conda/feedstock_root/build_artifacts/fsspec_1761840104528/work
+greenlet==3.2.4
+h11==0.16.0
+hf-xet==1.2.0
+httpcore==1.0.9
+httpx==0.28.1
+huggingface-hub==0.19.4
+HyperPyYAML==1.2.2
+idna==3.11
+imagesize==1.4.1
+iniconfig==2.3.0
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1741263328855/work
+jmespath==1.0.1
+joblib==1.5.2
+jsonschema==4.25.1
+jsonschema-specifications==2025.9.1
+julius==0.2.7
+jupyter_client==8.6.3
+jupyter_core==5.9.1
+jupyterlab_pygments==0.3.0
+kiwisolver==1.4.9
+lightning==2.5.6
+lightning-utilities==0.15.2
+Mako==1.3.10
+markdown-it-py==4.0.0
+MarkupSafe @ file:///Users/runner/miniforge3/conda-bld/markupsafe_1759055299832/work
+matplotlib==3.10.7
+mccabe==0.7.0
+mdurl==0.1.2
+mistune==3.1.4
+mpmath @ file:///home/conda/feedstock_root/build_artifacts/mpmath_1733302684489/work
+multidict==6.7.0
+mypy_extensions==1.1.0
+nbclient==0.10.2
+nbconvert==7.16.6
+nbformat==5.10.4
+networkx @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_networkx_1749078300/work
+numpy==2.3.4
+omegaconf==2.3.0
+optree @ file:///Users/runner/miniforge3/conda-bld/optree_1763124448230/work
+optuna==4.6.0
+packaging==25.0
+pandas==2.3.3
+pandocfilters==1.5.1
+pathspec==0.12.1
+pillow==12.0.0
+platformdirs==4.5.0
+pluggy==1.6.0
+ply==3.11
+primePy==1.3
+propcache==0.4.1
+protobuf==6.33.1
+pyannote.audio==3.4.0
+pyannote.core==5.0.0
+pyannote.database==5.1.3
+pyannote.metrics==3.2.1
+pyannote.pipeline==3.0.1
+pybind11 @ file:///D:/bld/bld/rattler-build_pybind11_1755953378/work
+pybind11-global @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pybind11-global_1755953338/work
+pycodestyle==2.14.0
+pycparser==2.23
+pyflakes==3.4.0
+Pygments==2.19.2
+pyparsing==3.2.5
+pytest==9.0.1
+python-dateutil==2.9.0.post0
+pytokens==0.3.0
+pytorch-lightning==2.5.6
+pytorch-metric-learning==2.9.0
+pytz==2025.2
+PyYAML==6.0.3
+pyzmq==27.1.0
+referencing==0.37.0
+-e git+ssh://git@github.com/The-Dev-Effect/reliquery.git@6c703179e9c1ee7c9e69425d4fbfc1cf057c370e#egg=reliquery
+requests==2.32.5
+rich==14.2.0
+roman-numerals-py==3.1.0
+rpds-py==0.28.0
+ruamel.yaml==0.18.16
+ruamel.yaml.clib==0.2.15
+s3transfer==0.14.0
+scikit-learn==1.7.2
+scipy==1.16.3
+semver==3.0.4
+sentencepiece==0.2.1
+shellingham==1.5.4
+six==1.17.0
+sniffio==1.3.1
+snowballstemmer==3.0.1
+sortedcontainers==2.4.0
+soundfile==0.13.1
+soupsieve==2.8
+speechbrain==1.0.3
+Sphinx==8.2.3
+sphinxcontrib-applehelp==2.0.0
+sphinxcontrib-devhelp==2.0.0
+sphinxcontrib-htmlhelp==2.1.0
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==2.0.0
+sphinxcontrib-serializinghtml==2.0.0
+SQLAlchemy==2.0.44
+srt==3.5.3
+stone==3.3.1
+sympy @ file:///home/conda/feedstock_root/build_artifacts/sympy_1745946057943/work
+tabulate==0.9.0
+tensorboardX==2.6.4
+threadpoolctl==3.6.0
+tinycss2==1.4.0
+torch @ file:///Users/runner/miniforge3/conda-bld/libtorch_1752197857499/work
+torch-audiomentations==0.12.0
+torch_pitch_shift==1.2.5
+torchaudio @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_torchaudio_1762036713/work
+torchcodec @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_torchcodec_1761994303/work
+torchmetrics==1.8.2
+tornado==6.5.2
+tqdm==4.67.1
+traitlets==5.14.3
+typer==0.20.0
+typer-slim==0.20.0
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1756220668/work
+tzdata==2025.2
+urllib3==2.5.0
+vosk==0.3.44
+webencodings==0.5.1
+websockets==15.0.1
+yarl==1.22.0
+yt-dlp @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_yt-dlp_1762916333/work
