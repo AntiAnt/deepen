@@ -20,7 +20,7 @@ class VoskTranscriber:
     ):
         self.vosk_model = Model(vosk_model)
         self.diarization = Pipeline.from_pretrained(
-            pyannote_model, use_auth_token=hf_token
+            pyannote_model, token=hf_token
         )
 
     def get_readable_transcript(
