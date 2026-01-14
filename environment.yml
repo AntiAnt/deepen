@@ -1,4 +1,4 @@
-name: test-deepen
+name: deepen
 
 channels:
   - pytorch
