@@ -88,6 +88,6 @@ vosk
 websockets
 yarl
 yt-dlp
-speechbrain  
+speechbrain>=2.1 
 pyannote-audio
 soundfile
