@@ -13,6 +13,7 @@ click
 contourpy
 cycler
 einops
+faster-whisper
 fastjsonschema
 flake8
 fonttools
@@ -84,10 +85,8 @@ typer
 typing_extensions
 tzdata
 urllib3
-vosk
 websockets
 yarl
 yt-dlp
-speechbrain
 pyannote-audio
 soundfile

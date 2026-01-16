@@ -5,7 +5,7 @@ from datetime import datetime
 from io import BytesIO
 from pathlib import Path
 from typing import Dict, List
-
+from faster_whisper import WhisperModel
 from pyannote.audio import Pipeline
 from reliquery import Relic
 from vosk import KaldiRecognizer, Model
@@ -133,11 +133,85 @@ class VoskTranscriber:
         print(f"Transcription: Done - {len(turns)} speaker turns")
 
         return turns
+    
+
+class WhisperTranscriber:
+    def __init__(self, config: dict):
+        whisper_config = config.get("models", {}).get("whisper", {})
+        self.model_size = whisper_config.get("model_size", "medium")
+        self.device = config.get("device", "cpu")           # Change in config for EC2/M1
+        self.compute_type = config.get("compute_type", "float16")
+        self.language = config.get("language", "en")
+        self.beam_size = config.get("beam_size", 5)
+
+        print(f"[WhisperTranscriber] Loading model: {self.model_size} on {self.device}")
+        
+        # Load the model
+        self.model = WhisperModel(
+            self.model_size,
+            device=self.device,
+            compute_type=self.compute_type
+        )
+
+    def get_readable_transcript(self, turns: List[Dict]) -> str:
+        """
+        Generates a human readable version of a Whisper generated transcription.
+        """
+        text_lines = []
+        text_lines.append("=" * 60 + "\n")
+        text_lines.append("Human Friendly Transcription\n")
+        text_lines.append(
+            f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+        )
+        text_lines.append("=" * 60 + "\n\n")
+
+        for turn in turns:
+            start = turn.get("start", 0.0)
+            minutes = int(start // 60)
+            seconds = int(start % 60)
+            timestamp = f"[{minutes:02d}:{seconds:02d}]"
+            text = turn["text"]
+
+            text_lines.append(timestamp)
+            wrapped = "\n".join(text[i:i + 80] for i in range(0, len(text), 80))
+            text_lines.append(f"\t{wrapped}\n\n")
+
+        return "".join(text_lines)
+            
+
+
+    def transcribe(self, audio: BytesIO) -> list:
+        """
+        Transcribe audio to list of segments.
+        Returns: [{'start': float, 'end': float, 'text': str}]
+        """
+        segments, info = self.model.transcribe(
+            audio=audio,
+            beam_size=self.beam_size,
+            language=self.language,
+            vad_filter=True  # Removes silence
+        )
+
+        result = []
+        for segment in segments:
+            result.append({
+                "start": segment.start,
+                "end": segment.end,
+                "text": segment.text.strip()
+            })
+
+        print(f"[Whisper] Detected language: {info.language} (prob: {info.language_probability:.2f})")
+        return result
 
 
 def get_transcription_service(config: Dict):
-    return VoskTranscriber(
-        vosk_model=config["models"]["vosk"],
-        pyannote_model=config["models"]["pyannote"],
-        hf_token=config["secrets"]["hf_token"],
-    )
+    if config["type"] == "whisper":
+        return WhisperTranscriber(config=config)
+    elif config["type"] == "vosk":
+        return VoskTranscriber(
+            vosk_model=config["models"]["vosk"],
+            pyannote_model=config["models"]["pyannote"],
+            hf_token=config["secrets"]["hf_token"],
+        )
+    else:
+        raise RuntimeError("transcriber config missing or not supported.")

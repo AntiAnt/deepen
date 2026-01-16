@@ -1,5 +1,6 @@
 vosk_models
 config.json
+*-config.json
 
 # Python bytecode & cache
 __pycache__

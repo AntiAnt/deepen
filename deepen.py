@@ -47,7 +47,7 @@ def main():
     args = parser.parse_args()
     config = get_pipeline_config(args.config_path)
 
-    url = config["vidoe_url"]
+    url = config["video_url"]
     video_id = get_video_id_from_url(url)
     relic_name = config.get("relic_name", video_id)
     relic_type = config.get("relic_type", "video-summary")
