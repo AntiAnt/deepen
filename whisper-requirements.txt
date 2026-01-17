@@ -85,6 +85,7 @@ typer
 typing_extensions
 tzdata
 urllib3
+vosk
 websockets
 yarl
 yt-dlp
